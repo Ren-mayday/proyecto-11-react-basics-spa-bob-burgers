@@ -9,6 +9,10 @@ const Nav = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const handleLinkClick = () => {
+    setMenuOpen(false); // cierra el menú cuando se pulsa el link
+  };
   return (
     <header>
       <Title text={"Bob's Burguers"} />
@@ -16,16 +20,16 @@ const Nav = () => {
         {menuOpen ? "✕" : "☰"}
       </button>
       <nav className={menuOpen ? "open" : ""}>
-        <NavLink to="/" onClick={() => setMenuOpen(false)}>
+        <NavLink to="/" onClick={handleLinkClick}>
           Home 🏠
         </NavLink>
-        <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+        <NavLink to="/about" onClick={handleLinkClick}>
           About 🍔
         </NavLink>
-        <NavLink to="/characters" onClick={() => setMenuOpen(false)}>
+        <NavLink to="/characters" onClick={handleLinkClick}>
           Characters 👨🏼‍🍳
         </NavLink>
-        <NavLink to="/favorites" onClick={() => setMenuOpen(false)}>
+        <NavLink to="/favorites" onClick={handleLinkClick}>
           Favorites 💛
         </NavLink>
       </nav>
