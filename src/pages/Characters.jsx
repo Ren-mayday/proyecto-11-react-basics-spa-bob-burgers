@@ -10,17 +10,22 @@ const Characters = () => {
   const [searchTerm, setSearchTerm] = useState(""); // input
 
   useEffect(() => {
-    fetch("https://bobsburgers-api.herokuapp.com/characters")
-      .then((response) => response.json())
-      .then((data) => {
-        setCharacters(data); // data es el array completo
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setError("Failed to fetch characters");
-        setLoading(false);
-      });
+    const stored = localStorage.getItem("characters");
+    if (stored) {
+      setCharacters(JSON.parse(stored));
+    } else {
+      fetch("https://bobsburgers-api.herokuapp.com/characters")
+        .then((response) => response.json())
+        .then((data) => {
+          setCharacters(data); // data es el array completo
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error(err);
+          setError("Failed to fetch characters");
+          setLoading(false);
+        });
+    }
   }, []);
   return (
     <main>

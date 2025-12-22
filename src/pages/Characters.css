@@ -11,3 +11,20 @@ main h1 {
   color: var(--bb-red);
   letter-spacing: 1px;
 }
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 16px;
+  margin: 0 auto 32px;
+  display: block;
+  border: 2px solid var(--bb-red);
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--bb-yellow);
+  box-shadow: 0 0 6px var(--bb-yellow);
+}
