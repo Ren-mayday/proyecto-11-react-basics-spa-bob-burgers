@@ -1,0 +1,45 @@
+.character-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor fijo para la imagen */
+.image-wrapper {
+  width: 100%;
+  height: 280px;
+  background-color: #f2f2f2;
+  overflow: hidden;
+}
+
+/* Imagen controlada */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Texto */
+.character-card h2 {
+  font-size: 1.1rem;
+  margin: 12px 8px 4px;
+}
+
+.character-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}

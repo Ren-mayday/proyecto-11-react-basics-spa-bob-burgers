@@ -1,4 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap");
+
+:root {
+  --bb-red: #d62828;
+  --bb-yellow: #fcbf49;
+  --bb-blue: #4ea8de;
+  --bb-green: #6ab04c;
+
+  --bb-dark: #2f2f2f;
+  --bb-gray: #f5f5f5;
+  --bb-white: #ffffff;
+}
 
 * {
   margin: 0;
@@ -6,6 +17,11 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
-  font-family: "Roboto", serif;
+}
+
+body {
+  font-family: "Baloo 2", cursive;
+  background-color: var(--bb-gray);
+  color: var(--bb-dark);
   scroll-behavior: smooth;
 }

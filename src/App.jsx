@@ -12,15 +12,14 @@ import Nav from "./components/Nav.jsx";
 function App() {
   return (
     <>
-      <Nav>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/characters" element={<Characters />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-      </Nav>
+      <Nav />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
