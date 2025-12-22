@@ -7,6 +7,7 @@ const Characters = () => {
   const [characters, setCharacters] = useState([]); // array de personajes
   const [loading, setLoading] = useState(true); // loading
   const [error, setError] = useState(null); // error
+  const [searchTerm, setSearchTerm] = useState(""); // input
 
   useEffect(() => {
     fetch("https://bobsburgers-api.herokuapp.com/characters")
@@ -24,6 +25,18 @@ const Characters = () => {
   return (
     <main>
       <Title text={"Bob's Burgers Characters"} />
+
+      <input
+        type="text"
+        placeholder="Search characters..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="search-input"
+      />
+
+      <CharacterList
+        characters={characters.filter((character) => character.name.toLowerCase().includes(searchTerm.toLowerCase()))}
+      />
 
       {loading && <p>Loading characters...</p>}
       {error && <p>{error}</p>}
