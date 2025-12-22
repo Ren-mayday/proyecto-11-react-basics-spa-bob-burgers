@@ -13,13 +13,21 @@ const Nav = () => {
     <header>
       <Title text={"Bob's Burguers"} />
       <button className="hamburger" onClick={toggleMenu}>
-        ☰
+        {menuOpen ? "✕" : "☰"}
       </button>
       <nav className={menuOpen ? "open" : ""}>
-        <NavLink to="/">Home 🏠</NavLink>
-        <NavLink to="/about">About 🍔</NavLink>
-        <NavLink to="/characters">Characters 👨🏼‍🍳</NavLink>
-        <NavLink to="/favorites">Favorites 💛</NavLink>
+        <NavLink to="/" onClick={() => setMenuOpen(false)}>
+          Home 🏠
+        </NavLink>
+        <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+          About 🍔
+        </NavLink>
+        <NavLink to="/characters" onClick={() => setMenuOpen(false)}>
+          Characters 👨🏼‍🍳
+        </NavLink>
+        <NavLink to="/favorites" onClick={() => setMenuOpen(false)}>
+          Favorites 💛
+        </NavLink>
       </nav>
     </header>
   );
