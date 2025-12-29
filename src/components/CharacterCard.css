@@ -2,14 +2,15 @@
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
-
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-  display: flex;
-  flex-direction: column;
   text-align: center;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.character-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .character-card:hover {
@@ -42,4 +43,49 @@
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 12px;
+}
+
+.fav-btn {
+  background-color: #ffcc00; /* amarillo tipo Bob's Burgers */
+  border: 2px solid #ff6600; /* borde naranja intenso */
+  color: #ff3300; /* rojo oscuro para el corazón */
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border-radius: 50px; /* redondeado tipo píldora */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  user-select: none;
+}
+
+/* Efecto hover */
+.fav-btn:hover {
+  background-color: #ffb700; /* un amarillo más intenso */
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Corazón dentro del botón */
+.fav-btn:focus {
+  outline: none;
+}
+
+/* Opcional: animación cuando cambia el corazón */
+.fav-btn.hearted {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

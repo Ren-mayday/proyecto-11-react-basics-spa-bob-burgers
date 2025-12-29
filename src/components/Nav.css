@@ -1,10 +1,15 @@
 header {
+  position: fixed; /* siempre visible */
+  top: 0; /* al top de la página */
+  left: 0;
+  width: 100%;
   background-color: var(--bb-red);
-  color: var(--bb-white);
+  z-index: 1000; /* para que esté encima del contenido */
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 nav {

@@ -3,11 +3,16 @@ import React from "react";
 import CharacterCard from "./CharacterCard.jsx";
 import "./CharacterList.css";
 
-const CharacterList = ({ characters }) => {
+const CharacterList = ({ characters, favorites, toggleFavorite }) => {
   return (
     <section className="character-list">
       {characters.map((character) => (
-        <CharacterCard key={character.id} character={character}></CharacterCard>
+        <CharacterCard
+          key={character.id}
+          character={character}
+          favorites={favorites}
+          toggleFavorite={toggleFavorite}
+        ></CharacterCard>
       ))}
     </section>
   );

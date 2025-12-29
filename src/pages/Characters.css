@@ -1,5 +1,8 @@
-main {
-  padding: 40px 24px;
+.characters-page {
+  padding: 180px 24px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Título */
