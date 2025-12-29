@@ -6,6 +6,10 @@ const CharacterDetail = () => {
   const { id } = useParams(); // id del personaje en la URL
   const [character, setCharacter] = useState(null);
 
+  const cleanText = (text) => {
+    if (!text) return "Unknown";
+    return text.replace(/^["']|["']$/g, "");
+  };
   useEffect(() => {
     const stored = localStorage.getItem("characters");
     if (stored) {
@@ -16,17 +20,41 @@ const CharacterDetail = () => {
   }, [id]);
 
   if (!character) {
-    return <p>Loading character...</p>;
+    return (
+      <main className="character-detail-page">
+        <p>Loading character...</p>
+      </main>
+    );
   }
 
   return (
     <main className="character-detail-page">
-      <h1>{character.name}</h1>
+      <h1>{cleanText(character.name)}</h1>
       <div className="character-detail">
-        <img src={character.image} alt={character.name} />
-        <p>Occupation: {character.occupation || "Unknown"}</p>
-        <p>Voiced By: {character.voicedBy || "Unknown"}</p>
-        <p>First Episode: {character.firstEpisode || "Unknown"}</p>
+        <img src={character.image} alt={cleanText(character.name)} />
+
+        <p>
+          <strong>Occupation:</strong> {character.occupation || "Unknown"}
+        </p>
+
+        {character.allOccupations && character.allOccupations.length > 0 && (
+          <p>
+            <strong>All Occupations:</strong> {character.allOccupations.join(", ")}
+          </p>
+        )}
+
+        {character.nicknames && character.nicknames.length > 0 && (
+          <p>
+            <strong>Nicknames:</strong> {character.nicknames.map(cleanText).join(", ")}
+          </p>
+        )}
+
+        <p>
+          <strong>Voiced By:</strong> {character.voicedBy || "Unknown"}
+        </p>
+        <p>
+          <strong>First Episode:</strong> {cleanText(character.firstEpisode)}
+        </p>
       </div>
     </main>
   );

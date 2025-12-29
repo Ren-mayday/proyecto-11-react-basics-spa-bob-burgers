@@ -1,11 +1,11 @@
 .character-detail-page {
   padding: 180px 24px 40px;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
-main h1 {
+.character-detail-page h1 {
   font-size: 2.5rem;
   color: var(--bb-red);
   margin-bottom: 24px;
@@ -24,14 +24,39 @@ main h1 {
 }
 
 .character-detail img {
-  width: 250px;
-  height: 250px;
-  object-fit: contain;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
   border-radius: 12px;
 }
 
 .character-detail p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--bb-dark);
-  margin: 4px 0;
+  margin: 8px 0;
+  text-align: left;
+  width: 100%;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.character-detail p strong {
+  color: var(--bb-red);
+  margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .character-detail-page {
+    padding: 140px 16px 40px;
+  }
+
+  .character-detail img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .character-detail p {
+    font-size: 0.95rem;
+  }
 }

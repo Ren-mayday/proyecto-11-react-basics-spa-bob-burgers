@@ -1,5 +1,5 @@
 .character-card {
-  background-color: #fff;
+  background-color: var(--bb-white);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -21,34 +21,38 @@
 /* Contenedor fijo para la imagen */
 .image-wrapper {
   width: 100%;
-  height: 280px;
-  background-color: #f2f2f2;
+  height: 200px;
+  background-color: var(--bb-gray);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Imagen controlada */
 .image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* Texto */
 .character-card h2 {
   font-size: 1.1rem;
   margin: 12px 8px 4px;
+  color: var(--bb-dark);
 }
 
-.character-card p {
+.character-card p strong {
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 12px;
 }
 
 .fav-btn {
-  background-color: #ffcc00; /* amarillo tipo Bob's Burgers */
+  background-color: var(--bb-yellow);
   border: 2px solid #ff6600; /* borde naranja intenso */
-  color: #ff3300; /* rojo oscuro para el corazón */
+  color: var(--bb-red);
   font-size: 1.2rem;
   padding: 8px 12px;
   border-radius: 50px;
@@ -63,7 +67,7 @@
 
 /* Efecto hover */
 .fav-btn:hover {
-  background-color: #ffb700; /* un amarillo más intenso */
+  background-color: #ffb700;
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

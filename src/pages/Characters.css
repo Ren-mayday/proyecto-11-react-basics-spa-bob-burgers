@@ -1,6 +1,6 @@
 .characters-page {
   padding: 180px 24px 40px;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
@@ -10,7 +10,6 @@ main h1 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 32px;
-
   color: var(--bb-red);
   letter-spacing: 1px;
 }
