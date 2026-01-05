@@ -37,7 +37,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/characters" element={<Characters favorites={favorites} toggleFavorite={toggleFavorite} />} />
         <Route path="/characters/:id" element={<CharacterDetail />} />
-        <Route path="/favorites" element={<Favorites favorites={favorites} />} />
+        <Route path="/favorites" element={<Favorites favorites={favorites} toggleFavorite={toggleFavorite} />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </>
