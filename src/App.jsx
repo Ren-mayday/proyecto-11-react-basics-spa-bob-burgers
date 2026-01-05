@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -11,7 +11,16 @@ import Nav from "./components/Nav.jsx";
 import CharacterDetail from "./pages/CharacterDetail.jsx";
 
 function App() {
-  const [favorites, setFavorites] = useState([]);
+  // Inicializar favoritos desde localStorage
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    return savedFavorites ? JSON.parse(savedFavorites) : [];
+  });
+
+  //Guardar en localStorage cada vez que cambien los favoritos
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   const toggleFavorite = (character) => {
     setFavorites((prev) => {
