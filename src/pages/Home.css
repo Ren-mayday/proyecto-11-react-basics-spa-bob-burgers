@@ -22,7 +22,7 @@
 }
 
 /* Título animado */
-.home-title {
+.home-title h1 {
   font-family: "Chewy", cursive;
   font-size: 3.5rem;
   margin-bottom: 40px;

@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap");
+
+.tabs-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botones de los tabs */
+.tabs-buttons {
+  display: flex;
+  gap: 12px;
+  border-bottom: 4px solid var(--bb-yellow);
+  margin-bottom: 40px;
+  padding: 0 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab {
+  padding: 16px 32px;
+  background: var(--bb-white);
+  border: 3px solid var(--bb-red);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bb-dark);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab:hover {
+  background-color: var(--bb-yellow);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(214, 40, 40, 0.3);
+}
+
+.tab.active {
+  background: var(--bb-red);
+  color: var(--bb-white);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(214, 40, 40, 0.4);
+  border-color: var(--bb-red);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bb-red);
+}
+
+/* Contenido del tab */
+.tab-content {
+  background: var(--bb-white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--bb-red), var(--bb-yellow), var(--bb-blue));
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content-section h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2rem;
+  color: var(--bb-red);
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 0 var(--bb-yellow);
+}
+
+.content-section h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.4rem;
+  color: var(--bb-dark);
+  margin-top: 30px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+}
+
+.content-section h3::before {
+  content: "🍔";
+  position: absolute;
+  left: -5px;
+  font-size: 1.2rem;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--bb-dark);
+  margin-bottom: 16px;
+}
+
+.content-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 16px;
+}
+
+.content-section li {
+  font-size: 1.05rem;
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  background: var(--bb-gray);
+  border-left: 4px solid var(--bb-yellow);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 50px;
+}
+
+.content-section li::before {
+  content: "→";
+  position: absolute;
+  left: 20px;
+  color: var(--bb-red);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.content-section li:hover {
+  background: var(--bb-yellow);
+  border-left-color: var(--bb-red);
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tabs-buttons {
+    gap: 8px;
+    padding: 0 4px;
+  }
+
+  .tab {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .tab-content {
+    padding: 24px 20px;
+  }
+
+  .content-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .content-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .content-section p {
+    font-size: 1rem;
+  }
+
+  .content-section li {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs-buttons {
+    flex-direction: column;
+    border-bottom: none;
+    gap: 8px;
+  }
+
+  .tab {
+    border-radius: 12px;
+    border: 3px solid var(--bb-red);
+  }
+
+  .tab.active::after {
+    display: none;
+  }
+
+  .tab-content {
+    padding: 20px 16px;
+  }
+
+  .content-section h2 {
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 0 var(--bb-yellow);
+  }
+}

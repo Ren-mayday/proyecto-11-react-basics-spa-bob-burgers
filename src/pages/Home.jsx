@@ -17,7 +17,7 @@ const Home = () => {
     <main className="home">
       <div className="hero">
         <div className="hero-content">
-          <Title className="home-title" text="Welcome to..." />
+          <Title className="home-title" text={"Welcome to..."} />
 
           <div className="hero-image-wrapper">
             <img
