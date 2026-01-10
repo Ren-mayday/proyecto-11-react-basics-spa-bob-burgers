@@ -60,8 +60,8 @@ const About = () => {
   ];
 
   return (
-    <main className="about-page">
-      <Title text={"About"} />
+    <main className="about-page page-container">
+      <Title className="chewy-title" text={"About"} />
       <Tabs tabs={tabsData} />
     </main>
   );

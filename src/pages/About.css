@@ -1,45 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Chewy&display=swap");
+/* About.css usa principalmente las clases globales */
 
-.about-page {
-  padding-top: 120px;
-  padding-bottom: 60px;
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  position: relative;
-}
-
-.about-page h1 {
-  font-family: "Chewy", cursive;
-  font-size: 3.5rem;
-  text-align: center;
-  margin-bottom: 50px;
-  color: var(--bb-red);
-  text-shadow: 3px 3px 0 var(--bb-yellow), 6px 6px 0 rgba(0, 0, 0, 0.1);
-  animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  letter-spacing: 2px;
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.3) translateY(-50px);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-/* Elementos decorativos flotantes */
 .about-page::before {
   content: "🍔";
   position: absolute;
@@ -63,51 +23,8 @@
   pointer-events: none;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-30px) rotate(5deg);
-  }
-  50% {
-    transform: translateY(-60px) rotate(-5deg);
-  }
-  75% {
-    transform: translateY(-30px) rotate(3deg);
-  }
-}
-
 /* Responsive */
-@media (max-width: 768px) {
-  .about-page {
-    padding-top: 100px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .about-page h1 {
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 0 var(--bb-yellow), 4px 4px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  .about-page::before,
-  .about-page::after {
-    font-size: 2.5rem;
-  }
-}
-
 @media (max-width: 480px) {
-  .about-page {
-    padding-top: 90px;
-  }
-
-  .about-page h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-
   .about-page::before,
   .about-page::after {
     display: none;

@@ -1,6 +1,6 @@
 .character-card {
   background-color: var(--bb-white);
-  border-radius: 12px;
+  border-radius: var(--border-radius-md);
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -29,7 +29,6 @@
   justify-content: center;
 }
 
-/* Imagen controlada */
 .image-wrapper img {
   width: 100%;
   height: 100%;
@@ -51,7 +50,7 @@
 
 .fav-btn {
   background-color: var(--bb-yellow);
-  border: 2px solid #ff6600; /* borde naranja intenso */
+  border: 2px solid #ff6600;
   color: var(--bb-red);
   font-size: 1.2rem;
   padding: 8px 12px;
@@ -65,30 +64,16 @@
   user-select: none;
 }
 
-/* Efecto hover */
 .fav-btn:hover {
   background-color: #ffb700;
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Corazón dentro del botón */
 .fav-btn:focus {
   outline: none;
 }
 
 .fav-btn.hearted {
   animation: pop 0.3s ease;
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1);
-  }
 }

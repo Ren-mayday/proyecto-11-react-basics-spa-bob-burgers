@@ -5,8 +5,8 @@ import "./Favorites.css";
 
 const Favorites = ({ favorites, toggleFavorite }) => {
   return (
-    <main className="favorites-page">
-      <Title text=" My Favorite Characters" />
+    <main className="favorites-page page-container">
+      <Title className="chewy-title" text=" My Favorite Characters" />
 
       {favorites.length === 0 ? (
         <p className="no-favorites">You don't have any favorites</p>

@@ -1,21 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap");
-
 .tabs-container {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
   animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Botones de los tabs */
@@ -34,7 +21,7 @@
   background: var(--bb-white);
   border: 3px solid var(--bb-red);
   border-bottom: none;
-  border-radius: 12px 12px 0 0;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
   cursor: pointer;
   font-size: 1.1rem;
   font-weight: 600;
@@ -72,7 +59,7 @@
 .tab-content {
   background: var(--bb-white);
   padding: 40px;
-  border-radius: 20px;
+  border-radius: var(--border-radius-lg);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   animation: fadeIn 0.5s ease-out;
   position: relative;
@@ -89,17 +76,7 @@
   background: linear-gradient(90deg, var(--bb-red), var(--bb-yellow), var(--bb-blue));
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .content-section h2 {
-  font-family: "Fredoka", sans-serif;
   font-size: 2rem;
   color: var(--bb-red);
   margin-bottom: 20px;
@@ -108,7 +85,6 @@
 }
 
 .content-section h3 {
-  font-family: "Fredoka", sans-serif;
   font-size: 1.4rem;
   color: var(--bb-dark);
   margin-top: 30px;
@@ -209,7 +185,7 @@
   }
 
   .tab {
-    border-radius: 12px;
+    border-radius: var(--border-radius-md);
     border: 3px solid var(--bb-red);
   }
 

@@ -27,7 +27,7 @@
   width: 280px;
   height: 280px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: var(--border-radius-md);
 }
 
 .character-detail p {
