@@ -1,16 +1,60 @@
-# React + Vite
+# Proyecto 11 React Basics SPA Bob's Burgers
+Single Page Application about the TV Show Bob's Burgers built with React, Vite and React Router.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Description
+- Explores all the charactes.
+- Favorite system using localStorage so does not make too many request to API.
+- Search bar of the characters in real time.
+- Individual details of each character.
+- Responsive design.
+- React Router navigation.
 
-Currently, two official plugins are available:
+## 🛠️ Technologies
+- React - Main library.
+- Vite - Build tool.
+- React Router - Routing.
+- Bob's Burgers API - Character's information.
+- LocalStorage - Data persistance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Setting up
+```bash
+# Clone repository
+git clone https://https://github.com/Ren-mayday/proyecto-11-react-basics-spa-bob-burgers.git
 
-## React Compiler
+# Enter directory
+cd proyecto-11-react-basics-spa-bob-burgers
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Install dependencies
+npm install
 
-## Expanding the ESLint configuration
+# Start project
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🗂️ Structure
+```
+proyecto-11-react-basics-spa-bob-burgers/
+├── src/
+│   ├── assets
+│   ├── components
+│   └── pages
+├── App.css
+├── App.jsx
+├── index.css
+├── main.jsx
+├── public/
+└── package.json
+```
+
+- pages/ - Page components (Home, Characters, CharacterDetail, Favorites, About, NotFound).
+- components/ - Reusable components (Nav, CharacterCard, CharacterList, Tabs, Title).
+
+## 🔗 Routes
+- / - Home.
+- /about - Information about the TV show and project.
+- /characters - List of charactes.
+- /characters/:id - Character details.
+- /favorites - Favorite characters
+
+## 📝 API
+This projejct is obtaining all data from https://www.bobsburgersapi.com/.
