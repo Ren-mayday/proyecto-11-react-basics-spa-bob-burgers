@@ -15,6 +15,50 @@ Single Page Application about the TV Show Bob's Burgers built with React, Vite a
 - React Router - Routing.
 - Bob's Burgers API - Character's information.
 - LocalStorage - Data persistance.
+```
+App.jsx:
+// Inicializar favoritos desde localStorage
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    return savedFavorites ? JSON.parse(savedFavorites) : [];
+  });
+
+  //Guardar en localStorage cada vez que cambien los favoritos
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+Characters.jxs:
+const [characters, setCharacters] = useState([]); // array de personajes
+  const [loading, setLoading] = useState(true); // loading
+  const [error, setError] = useState(null); // error
+  const [searchTerm, setSearchTerm] = useState(""); // input
+
+  useEffect(() => {
+    const stored = localStorage.getItem("characters");
+    if (stored) {
+      setCharacters(JSON.parse(stored));
+      setLoading(false);
+    } else {
+      fetch("https://bobsburgers-api.herokuapp.com/characters")
+        .then((response) => response.json())
+        .then((data) => {
+          setCharacters(data); // data es el array completo
+          localStorage.setItem("characters", JSON.stringify(data));
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error(err);
+          setError("Failed to fetch characters");
+          setLoading(false);
+        });
+    }
+  }, []);
+
+  const filteredCharacters = characters.filter((character) =>
+    character.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+```
 
 ## 📦 Setting up
 ```bash
