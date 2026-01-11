@@ -102,3 +102,9 @@ proyecto-11-react-basics-spa-bob-burgers/
 
 ## 📝 API
 This projejct is obtaining all data from https://www.bobsburgersapi.com/.
+
+## 👩🏽‍💻 Developer
+
+**Rencel Dayrit Cube**
+- GitHub: https://github.com/Ren-mayday
+- LinkedIn: https://www.linkedin.com/in/rencel-dayrit-cube/
